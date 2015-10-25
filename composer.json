@@ -10,7 +10,8 @@
         "wandu/di": "dev-master",
         "wandu/http": "~1.1",
         "wandu/laravel-repository": "0.7.*",
-        "wandu/router": "^0.5"
+        "wandu/router": "^0.5",
+        "davedevelopment/phpmig": "~1.2"
     },
     "autoload": {
         "psr-4": {

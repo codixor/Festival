@@ -1,2 +1,4 @@
 <?php
-return ['foo' => "!!!"];
+return [
+    'timezone' => "GMT"
+];
