@@ -4,32 +4,25 @@ This web page has been developed by Wani.
  - me@wani.kr
  - http://wani.kr
 -->
-<!--[if lt IE 7]><html class="ie6" lang="ko"><![endif]-->
-<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
-<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="ko"><!--<![endif]-->
+<html>
 <head>
-<title>Your Title</title>
-<meta charset="utf-8" />
+    <title>Your Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <!--[if lt IE 9]><script src="/static/js/legacy.min.js"></script><![endif]-->
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<!--[if lt IE 9]>
-<script src="/static/vendor/html5shiv/dist/html5shiv.min.js"></script>
-<![endif]-->
-
-<link rel="stylesheet" href="/static/css/index.css" />
-
-<!--[if lt IE 9]>
-<script src="/static/vendor/respond/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
+    <script src="/static/js/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    </head>
 <body>
-
-Your Body :)
-
-<script src="/static/js/index.js"></script>
+<div id="example"></div>
+<script type="text/babel">
+    ReactDOM.render(
+    <h1>Hello, <?php echo $who ?>!</h1>,
+        document.getElementById('example')
+    );
+</script>
 </body>
 </html>

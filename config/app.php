@@ -1,5 +1,5 @@
 <?php
 return [
-    'debug' => true,
-    'timezone' => "GMT"
+    'debug' => false,
+    'timezone' => "GMT",
 ];
