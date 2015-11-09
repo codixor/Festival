@@ -1,0 +1,8 @@
+{
+  "name": "Wandu Festival",
+  "dependencies": {
+    "react": "~0.14.2",
+    "html5shiv": "~3.7.3",
+    "respond": "~1.4.2"
+  }
+}

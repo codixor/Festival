@@ -3,4 +3,8 @@
 vendor
 composer.lock
 
+/bower_components
+/node_modules
+
+/public/static
 /storage
