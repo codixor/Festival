@@ -7,6 +7,10 @@ use Wandu\DI\ServiceProviderInterface;
 
 class DatabaseProvider implements ServiceProviderInterface
 {
+    public function boot(ContainerInterface $app)
+    {
+    }
+
     public function register(ContainerInterface $app)
     {
         $app->closure(Capsule::class, function (ContainerInterface $app) {

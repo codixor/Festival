@@ -1,7 +1,6 @@
 <?php
 namespace Wandu\Festival\Providers;
 
-use ArrayAccess;
 use Wandu\DI\ContainerInterface;
 use Wandu\DI\ServiceProviderInterface;
 use Wandu\Http\Contracts\SessionAdapterInterface;
@@ -11,12 +10,16 @@ use Wandu\Http\Session\SessionFactory;
 
 class SessionProvider implements ServiceProviderInterface
 {
-    public function register(ContainerInterface $app, ArrayAccess $config = null)
+    public function boot(ContainerInterface $app)
+    {
+    }
+
+    public function register(ContainerInterface $app)
     {
         $app->bind(CookieJarFactory::class);
         $app->closure(SessionAdapterInterface::class, function (ContainerInterface $app) {
             return new FileAdapter(
-                $app->path('storage/session'),
+                $app->path('/storage/session'),
                 $app->config('session.timeout', 1800)
             );
         });

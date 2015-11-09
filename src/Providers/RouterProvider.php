@@ -9,6 +9,10 @@ use Wandu\Router\Router;
 
 class RouterProvider implements  ServiceProviderInterface
 {
+    public function boot(ContainerInterface $app)
+    {
+    }
+
     public function register(ContainerInterface $app)
     {
         $app->bind(ClassLoaderInterface::class, WanduLoader::class);
