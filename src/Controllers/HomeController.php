@@ -2,15 +2,13 @@
 namespace Wandu\Festival\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface;
-use Wandu\Router\Contracts\ControllerInterface;
 
-class HomeController implements ControllerInterface
+class HomeController extends Controller
 {
     public function index(ServerRequestInterface $request)
     {
-        $session = $request->getAttribute('session');
-        //$session->flash('hello', "good morning~");
-        //$session->set('hello', 'world');
-        return 'Hello World :D' . $session->get('hello');
+        return $this->view->render('welcome', [
+            'who' => 'Festival'
+        ]);
     }
 }
