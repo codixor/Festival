@@ -1,20 +1,18 @@
 <?php
-
+use Illuminate\Database\Capsule\Manager;
 use Phpmig\Adapter;
+use Phpmig\Adapter\Illuminate\Database as DatabaseAdapter;
+use Wandu\DI\ContainerInterface;
 use Wandu\Festival\Application;
 
 $container = new Application();
+
+$container->alias('db', Manager::class);
+$container->closure('phpmig.adapter', function(ContainerInterface $app) {
+    return new DatabaseAdapter($app['db'], 'migrations');
+});
+$container->instance('phpmig.migrations_path', __DIR__.'/migrations');
+
 $container->boot();
-
-// replace this with a better Phpmig\Adapter\AdapterInterface
-$container['phpmig.adapter'] = new Adapter\File\Flat(__DIR__ . DIRECTORY_SEPARATOR . 'migrations/.migrations.log');
-
-$container['phpmig.migrations_path'] = __DIR__ . DIRECTORY_SEPARATOR . 'migrations';
-
-// You can also provide an array of migration files
-// $container['phpmig.migrations'] = array_merge(
-//     glob('migrations_1/*.php'),
-//     glob('migrations_2/*.php')
-// );
 
 return $container;

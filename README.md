@@ -10,6 +10,7 @@ $ composer install
 $ bower install
 $ npm install
 $ gulp
+$ ./vendor/bin/phpmig migrate
 ```
 
 ## How to run

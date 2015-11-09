@@ -1,6 +1,7 @@
 <?php
 use Wandu\DI\ContainerInterface;
 use Wandu\Festival\Providers\ContainerProvider;
+use Wandu\Festival\Providers\DatabaseProvider;
 use Wandu\Festival\Providers\ErrorHandleProvider;
 use Wandu\Festival\Providers\HttpProvider;
 use Wandu\Festival\Providers\RouterProvider;
@@ -14,4 +15,5 @@ return function (ContainerInterface $container) {
     $container->register(new HttpProvider());
     $container->register(new SessionProvider());
     $container->register(new ViewProvider());
+    $container->register(new DatabaseProvider());
 };
